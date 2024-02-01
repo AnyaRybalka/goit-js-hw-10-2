@@ -45,6 +45,7 @@ const options = {
             hasError = false;
             refs.buttonEl.disabled = false;
         }
+        refs.inputEl.disabled = false;
     },
 };
 
@@ -53,6 +54,8 @@ refs.buttonEl.addEventListener("click", () => {
     intervalId = setInterval(() => {
         checkDates(selectedDate);
     }, 1000);
+    refs.inputEl.disabled = true;
+    refs.buttonEl.disabled = true;
 });
 function updateTimerDisplay(ms) {
     if (ms === null || isNaN(ms)) {
